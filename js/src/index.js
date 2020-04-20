@@ -1,9 +1,31 @@
-const dnaurl = require("./dnaurl");
-var dnaUrl = dnaurl.dnaUrl;
+//const dnaurl = require("./dnaurl");
+
+const {
+   dnaUrlEncode,
+    dnaUrlDecode,
+    checksum
+} = require("./dnaurl");
+
+
+function encode() {
+    const recipient = document.querySelector("#dna-recipient").value.trim().toLowerCase();
+    const amount = parseFloat(document.querySelector("#dna-amount").value.trim());
+    const data = document.querySelector("#dna-data").value.trim();
+    const transaction = {"recipient": recipient, "amount": amount, "data": data}
+    const dnaUrl = dnaUrlEncode(transaction);
+    const el = document.querySelector("#dna-encode-result")
+    el.classList.remove("hidden");
+    el.innerHTML = dnaUrl;
+}
+
+function decode() {
+}
+
 
 document
-  .querySelector("#btn-generate")
-  .addEventListener("click", generate_seed);
+  .querySelector("#btn-encode")
+  .addEventListener("click", encode);
 
-const genVoteUrlButton = document.querySelector("#generate-vote-url");
-if (genVoteUrlButton) genVoteUrlButton.addEventListener("click", generate_vote);
+document
+  .querySelector("#btn-decode")
+  .addEventListener("click", decode);

@@ -23,7 +23,7 @@ function checksum(string) {
     return encoded;
 }
 
-function dnaUrl(transaction) {
+function dnaUrlEncode(transaction) {
     //  Assemble a dna url from json transaction data
     url = "dna://" + transaction['recipient'] + "/"
         + transaction['amount'].toString() + "/"
@@ -33,7 +33,24 @@ function dnaUrl(transaction) {
     return url;
 }
 
+function dnaUrlDecode(dnaUrl) {
+    // TODO: check starts with dna://
+    segments = dnaUrl.split("/");
+    /*
+    //  Assemble a dna url from json transaction data
+    url = "dna://" + transaction['recipient'] + "/"
+        + transaction['amount'].toString() + "/"
+        + encoder.encode(transaction['data']).toString() + "/";
+    chk = checksum(url);
+    url += chk;
+    return url;
+    */
+    return {"recipient":"0xtest", "amount": 0.0, "data": "test"}
+}
+
+
 module.exports = {
-    dnaUrl,
+    dnaUrlEncode,
+    dnaUrlDecode,
     checksum
 }
