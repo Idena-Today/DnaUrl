@@ -30,10 +30,12 @@ dna://0xrecipient_address/amount/data/checksum
 
 - dna:// the protocol part of the url
 - 0xrecipient_address: the recipient address, string, in clear. This is a regular DNA Address, 0x then 40 hex chars.  
-  a..f preferably as lowercase
 - amount: numeric. The amount of DNA to send to the recipient. Can be 0.
 - data: optional, can be empty. The encoded data payload. 
 - checksum: required, encoded checksum of the `dna://0xrecipient_address/amount/data/` part
+
+Note: Eth address are hex chars, not case sensitive (a..f == A..F) however, an optional checksum can be used with eth like addresses, by encoding the hash in the case of the address.  
+There could be an added check for eth checksum, but as we can't make sure a case difference was on purpose or not, it will not be integrated as part of the checks of a DnaUrl.
 
 ### Encoding
 
