@@ -19,6 +19,11 @@ function encode() {
 }
 
 function decode() {
+    const dnaUrl = document.querySelector("#dnaurl").value.trim();
+    const transaction = dnaUrlDecode(dnaUrl);
+    const el = document.querySelector("#dna-decode-result")
+    el.classList.remove("hidden");
+    el.innerHTML = JSON. stringify(transaction);
 }
 
 

@@ -34,18 +34,29 @@ function dnaUrlEncode(transaction) {
 }
 
 function dnaUrlDecode(dnaUrl) {
-    // TODO: check starts with dna://
     segments = dnaUrl.split("/");
-    /*
-    //  Assemble a dna url from json transaction data
-    url = "dna://" + transaction['recipient'] + "/"
-        + transaction['amount'].toString() + "/"
-        + encoder.encode(transaction['data']).toString() + "/";
-    chk = checksum(url);
-    url += chk;
-    return url;
-    */
-    return {"recipient":"0xtest", "amount": 0.0, "data": "test"}
+    var message = "";
+    var status = "OK";
+    // TODO: more sanity checks
+    //console.log(segments);
+    if (segments[0] != "dna:") {
+        status = 'KO';
+        message += 'Not a DNA URL\n';
+    };
+    if (segments[1] != "") {
+        status = 'KO';
+        message += 'Not a DNA URL\n';
+    };
+    transaction = {"recipient": segments[2], "amount": segments[3], "data": encoder.decode(segments[4]).toString()}
+    rebuild = dnaUrlEncode(transaction);
+    //console.log(rebuild);
+    if (rebuild!=dnaUrl) {
+        status = 'KO';
+        message += 'Wrong Checksum\n';
+    }
+    transaction["status"] = status;
+    transaction["message"] = message;
+    return transaction;
 }
 
 

@@ -1,6 +1,8 @@
 # WORK IN PROGRESS #
 
-Specs are there but js code still is in the works. Scaffold only as for now.
+Encode and decode working, html demo working.
+
+Test suite to be done.
 
 
 ## DNA URL
