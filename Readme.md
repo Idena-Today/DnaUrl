@@ -1,3 +1,8 @@
+# WORK IN PROGRESS #
+
+Specs are there but js code still is in the works. Scaffold only as for now.
+
+
 ## DNA URL
 
 A DnaUrl is a safe way to encode an Idena transaction - including data payload - into a safe to transfer string.
