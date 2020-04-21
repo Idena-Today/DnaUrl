@@ -52,12 +52,19 @@ data and checksum are encoded using base85 - RFC194
 
 Checksum is a md5 of the `dna://0xrecipient_address/amount/data/` string
 
+## Demo
+
+See crude [live demo](https://idena-today.github.io/DnaUrl/js/dist/)
+
 ## FAQ 
 
 Why this base85 encoding?  
 - less space wasted compared to base64
 - no / in the charset, therefore compatible with url use.
 
+## Compatible implementations
+
+WIP
 
 ### Reference
 
