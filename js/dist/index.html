@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>DnaUrl Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css"/>
+</head>
+
+<body>
+<div class="container mx-auto font-sans p-4">
+    <div class="text-center my-8">
+        <img class="mx-auto" width="60" src="https://idena.io/images/logo_idena.svg" alt="Idena"/>
+        <h1 class="text-4xl font-bold capitalize text-purple-800">
+            DnaUrl Test
+        </h1>
+    </div>
+
+    <div class="text-center my-8">
+        <h2 class="text-2xl font-bold capitalize text-purple-800">
+            DnaUrl Decoding
+        </h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+        <div class="master-key-wrap mb-8">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="dnaurl">
+                DNA URL
+            </label>
+            <div class="shadow border rounded w-full text-gray-700 py-2 px-3 flex">
+                <input class="flex-1 appearance-none leading-tight focus:outline-none rounded" id="dnaurl" type="text" placeholder="Enter a DNA URL" />
+
+                <button id="btn-decode" class="text-sm w-auto hover:bg-blue-100 font-bold text-blue-500 px-2 rounded">
+                    Decode DNA URL
+                </button>
+            </div>
+
+            <div id="dna-decode-result" class="border-green-500 border-l-4 hidden mt-2 py-2 bg-green-100 pl-2 text-green-900 text-sm rounded-sm">
+                -
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="text-center my-8">
+        <h2 class="text-2xl font-bold capitalize text-purple-800">
+            DnaUrl Encoding
+        </h2>
+    </div>
+    <div class="max-w-3xl mx-auto">
+        <div class="master-key-wrap mb-8">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="dna-recipient">
+                Recipient address
+            </label>
+            <div class="shadow border rounded w-full text-gray-700 py-2 px-3 flex">
+                <input class="flex-1 appearance-none leading-tight focus:outline-none rounded" id="dna-recipient" type="text" placeholder="Recipient DNA address" />
+            </div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="dna-amount">
+                Amount
+            </label>
+            <div class="shadow border rounded w-full text-gray-700 py-2 px-3 flex">
+                <input class="flex-1 appearance-none leading-tight focus:outline-none rounded" id="dna-amount" type="number" placeholder="DNA Amount" />
+            </div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="dna-data">
+                Data (optional)
+            </label>
+            <div class="shadow border rounded w-full text-gray-700 py-2 px-3 flex">
+                <input class="flex-1 appearance-none leading-tight focus:outline-none rounded" id="dna-data" type="text" placeholder="Optional data payload" />
+            </div>
+            <br />
+            <button id="btn-encode" class="w-auto hover:bg-blue-100 font-bold text-blue-500 px-2 rounded">
+                Encode to DNA URL
+            </button>
+
+            <div id="dna-encode-result" class="border-green-500 border-l-4 hidden mt-2 py-2 bg-green-100 pl-2 text-green-900 text-sm rounded-sm">
+                -
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text-center">
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="main.js"></script></body>
+</html>
