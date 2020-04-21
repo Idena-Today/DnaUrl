@@ -23,13 +23,35 @@ function checksum(string) {
     return encoded;
 }
 
-function dnaUrlEncode(transaction) {
-    //  Assemble a dna url from json transaction data
-    url = "dna://" + transaction['recipient'] + "/"
+function dnaUrlTxnString(transaction) {
+    encData = transaction['data'] ? encoder.encode(transaction['data']).toString() : ''
+    // console.log(transaction);
+    return transaction['recipient'] + "/"
         + transaction['amount'].toString() + "/"
-        + encoder.encode(transaction['data']).toString() + "/";
+        + encData + '/';
+}
+
+function dnaUrlProtocolAndChecksum(txnString) {
+    // console.log(txnString)
+    url = "dna://" + txnString;
     chk = checksum(url);
     url += chk;
+    return url;
+}
+
+function dnaUrlEncode(transactions) {
+    if (Array.isArray(transactions)) {
+        var txnString = 'bulk/'
+        for (const transaction of transactions) {
+            console.log(transaction);
+            string = dnaUrlTxnString(transaction);
+            console.log(string)
+            txnString += string;
+        };
+    } else {
+        txnString = dnaUrlTxnString(transactions);
+    }
+    url = dnaUrlProtocolAndChecksum(txnString);
     return url;
 }
 
@@ -47,10 +69,24 @@ function dnaUrlDecode(dnaUrl) {
         status = 'KO';
         message += 'Not a DNA URL\n';
     };
-    transaction = {"recipient": segments[2], "amount": segments[3], "data": encoder.decode(segments[4]).toString()}
+    if (segments[2] === 'bulk') {
+        var bulkSegments = segments.slice(3, -1);
+        if (bulkSegments.length % 3 !== 0) {
+            status = 'KO';
+            message += 'Bulk DNA URL incorrect format\n';
+        }
+        transaction = [];
+        for (i = 0; i < bulkSegments.length / 3; i++) {
+            var j = 3 * i;
+            var k = 3 * i + 1;
+            var l = 3 * i + 2;
+            transaction.push({ "recipient": bulkSegments[j], "amount": bulkSegments[k], "data": encoder.decode(bulkSegments[l]).toString() });
+        }
+    } else {
+        transaction = { "recipient": segments[2], "amount": segments[3], "data": encoder.decode(segments[4]).toString() }
+    }
     rebuild = dnaUrlEncode(transaction);
-    //console.log(rebuild);
-    if (rebuild!=dnaUrl) {
+    if (rebuild != dnaUrl) {
         status = 'KO';
         message += 'Wrong Checksum\n';
     }
