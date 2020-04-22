@@ -12,10 +12,12 @@
     "http-server": "^0.2.1",
     "jest": "^24.9.0",
     "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
     "build": "webpack --display-modules",
+    "start": "webpack-dev-server --open",
     "serve": "http-server dist",
     "test": "jest"
   },

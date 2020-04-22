@@ -69,3 +69,17 @@ WIP
 ### Reference
 
 Derived from Bismuth "BisUrl" serialization format.
+
+## Package development
+
+Go to the js folder. `cd js`
+
+To install dependencies run `npm install`
+
+For a local server during development `npm run start`. Changes in /src are loaded into the browser.
+
+To build into the /dist folder `npm run build`
+
+Tests (when written) `npm run test`
+
+After building, serve with `npm run serve`
