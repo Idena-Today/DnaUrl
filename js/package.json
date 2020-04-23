@@ -1,8 +1,8 @@
 {
   "name": "dnaurl",
   "version": "0.0.3",
-  "description": "DnaUrl encoder/decoder for idena Cryptocurrency",
-  "private": true,
+  "description": "DnaUrl encoder/decoder for Idena Cryptocurrency",
+  "private": false,
   "dependencies": {
     "bs58": "^4.0.1",
     "lodash": "^4.17.15"
@@ -21,7 +21,7 @@
     "serve": "http-server dist",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Idena", "Cryptocurrency", "Wallet", "Encoder", "Decoder", "Protocol"],
+  "author": "idena.today",
   "license": "ISC"
 }
