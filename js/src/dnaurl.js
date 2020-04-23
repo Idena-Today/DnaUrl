@@ -32,9 +32,9 @@ function dnaUrlEncode(transactions) {
     if (Array.isArray(transactions)) {
         var txnString = 'bulk/'
         for (const transaction of transactions) {
-            console.log(transaction);
+            //console.log(transaction);
             string = dnaUrlTxnString(transaction);
-            console.log(string)
+            //console.log(string)
             txnString += string;
         };
     } else {

@@ -26,6 +26,8 @@ function decode() {
     el.innerHTML = JSON.stringify(transaction);
 }
 
+/*
+// Moved to test, kept for temp. reference.
 const bulkTransactions = [
     {
         recipient: '0x92ab3627cfe74def8d9381373226ab28cba69327',
@@ -50,7 +52,7 @@ console.log(dnaUrl)
 
 const txns = dnaUrlDecode(dnaUrl);
 console.log(txns);
-
+*/
 
 document
     .querySelector("#btn-encode")
