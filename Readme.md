@@ -4,6 +4,8 @@ Encode and decode working, html demo working.
 
 Test suite to be done.
 
+V2
+
 
 ## DNA URL
 
@@ -46,11 +48,12 @@ There could be an added check for eth checksum, but as we can't make sure a case
 
 ### Encoding
 
-data and checksum are encoded using base85 - RFC194
+data and checksum are encoded using base58.
 
 ### Checksum
 
-Checksum is a md5 of the `dna://0xrecipient_address/amount/data/` string
+Checksum consist of the first 8 bytes of md5 from the `dna://0xrecipient_address/amount/data/` string.    
+Goal is to prevent accidental damaging of the string while in transit, not to have a secure cryptographic primitive.
 
 ## Demo
 
@@ -58,9 +61,16 @@ See crude [live demo](https://idena-today.github.io/DnaUrl/js/dist/)
 
 ## FAQ 
 
-Why this base85 encoding?  
-- less space wasted compared to base64
+Why this base58 encoding?  
 - no / in the charset, therefore compatible with url use.
+- no character that would be escaped or encoded in various apps
+- every segment of the url can be doubleclicked to be copied individually.
+
+## History
+
+- v0.0.3: Moved to base58 instead of base85, shorter checksum
+- v0.0.2: Working demo
+- v0.0.1: Initial commit
 
 ## Compatible implementations
 

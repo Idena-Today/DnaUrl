@@ -44,11 +44,13 @@ const bulkTransactions = [
     }
 ];
 
+
 const dnaUrl = dnaUrlEncode(bulkTransactions);
 console.log(dnaUrl)
 
 const txns = dnaUrlDecode(dnaUrl);
 console.log(txns);
+
 
 document
     .querySelector("#btn-encode")
