@@ -6,6 +6,8 @@ Test suite to be done.
 
 V2
 
+Now hosted as a npm module https://www.npmjs.com/package/dnaurl
+
 
 ## DNA URL
 
@@ -68,6 +70,8 @@ Why this base58 encoding?
 
 ## History
 
+- v0.0.5: Added doc for npm
+- v0.0.4: Published to npm
 - v0.0.3: Moved to base58 instead of base85, shorter checksum
 - v0.0.2: Working demo
 - v0.0.1: Initial commit

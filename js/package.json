@@ -1,6 +1,6 @@
 {
   "name": "dnaurl",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "DnaUrl encoder/decoder for Idena Cryptocurrency",
   "private": false,
   "dependencies": {
@@ -23,5 +23,14 @@
   },
   "keywords": ["Idena", "Cryptocurrency", "Wallet", "Encoder", "Decoder", "Protocol"],
   "author": "idena.today",
-  "license": "ISC"
+  "license": "ISC",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Idena-Today/DnaUrl.git"
+  },
+    "bugs": {
+    "url": "https://github.com/Idena-Today/DnaUrl/issues"
+  },
+  "homepage": "https://github.com/Idena-Today/DnaUrl"
 }
