@@ -64,7 +64,7 @@ Suggested by @AngainorDev
 
 Main use: transmit a raw transaction signature for chain submission
 
-Format: `dna://txchecksum/encoded_sig_buffer/checksum`
+Format: `dna://sig/txchecksum/encoded_sig_buffer/checksum`
 
 encoded_sig_buffer is "joinedSignature" encoded in base58. The online wallet then assemble the full tx and sends it.  
 it should also validate the signature, so no mismatch is possible.

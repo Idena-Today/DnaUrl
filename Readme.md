@@ -1,10 +1,6 @@
 # WORK IN PROGRESS #
 
-Encode and decode working, html demo working.
-
-Test suite to be done.
-
-V2
+Encode and decode working, partial html demo working.
 
 Now hosted as a npm module https://www.npmjs.com/package/dnaurl
 
@@ -60,7 +56,7 @@ Goal is to prevent accidental damaging of the string while in transit, not to ha
 ## Extended formats
 
 More formats are specified for specific cases, like bulk transaction sending or offline signing.  
-All formats specs are now listed on the dedicated [DnaUrl Formats](formats.md) page
+**All formats specs are now listed on the dedicated [DnaUrl Formats](formats.md) page**
 
 ## Demo
 
@@ -75,6 +71,7 @@ Why this base58 encoding?
 
 ## History
 
+- v0.0.6: Added "raw" and "sig" formats and test vectors - Change the format of decoded transaction object.
 - v0.0.5: Added doc for npm
 - v0.0.4: Published to npm
 - v0.0.3: Moved to base58 instead of base85, shorter checksum
