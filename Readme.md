@@ -57,6 +57,11 @@ data and checksum are encoded using base58.
 Checksum consist of the first 8 bytes of md5 from the `dna://0xrecipient_address/amount/data/` string.    
 Goal is to prevent accidental damaging of the string while in transit, not to have a secure cryptographic primitive.
 
+## Extended formats
+
+More formats are specified for specific cases, like bulk transaction sending or offline signing.  
+All formats specs are now listed on the dedicated [DnaUrl Formats](formats.md) page
+
 ## Demo
 
 See crude [live demo](https://idena-today.github.io/DnaUrl/js/dist/)
